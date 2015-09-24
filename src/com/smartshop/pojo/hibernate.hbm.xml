@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.smartshop.pojo.User" table="User">
+		<id name="userName" type="string" column="user_name">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="string" column="name" />
+		<property name="mobile" type="long" column="mobile" />
+		<!-- <set name="address" lazy="false" cascade="all">
+			<key column="user_name" />
+			<one-to-many class="com.smartshop.pojo.Address" />
+		</set> -->
+	</class>
+	
+	<class name="com.smartshop.pojo.Login" table="login">
+		<id name="userName" type="string" column="user_name">
+			<generator class="assigned" />
+		</id>
+		<property name="password" type="string" column="password" />
+	</class>
+	
+	<class name="com.smartshop.pojo.Address" table="address">
+		<id name="userName" type="string" column="user_name">
+			<generator class="assigned" />
+		</id>
+		<property name="addr" type="string" column="addr" />
+		<property name="city" type="string" column="city" />
+		<property name="state" type="string" column="state" />
+		<property name="pin" type="integer" column="pin" />
+	</class>
+	
+	<class name="com.smartshop.pojo.Item" table="item">
+		<id name="itemId" type="long" column="item_id">
+			<generator class="assigned" />
+		</id>
+		<property name="itemName" type="string" column="item_name" />
+		<property name="itemDesc" type="string" column="item_desc" />
+		<property name="quantity" type="integer" column="quantity" />
+		<property name="price" type="double" column="price" />
+	</class>
+	
+</hibernate-mapping>
